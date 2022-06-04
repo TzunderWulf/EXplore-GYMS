@@ -45,6 +45,7 @@ export function MapScreen() {
                     key="End User Location"
                     coordinate={{ latitude: location.latitude, longitude: location.longitude }}
                     title="End User Location"
+                    image={require('./assets/user-pin.png')}
                 />
             </MapView>
         </View>
