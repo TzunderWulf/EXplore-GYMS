@@ -9,31 +9,18 @@ import { SettingsScreen } from './SettingsScreen';
 
 export default function App() {
     const Tab = createBottomTabNavigator();
-    const [gyms, setGyms] = useState([]);
-
-    const fetchGyms = () => {
-        fetch('https://stud.hosted.hr.nl/1006859/webservice/gymList.json')
-            .then((response) => response.json())
-            .then((data) => setGyms(data["ex-raid-gyms"]))
-            .catch((error) => console.log(error))
-    }
-
-    useEffect(() => {
-        fetchGyms();
-    }, [])
 
     return(
         <NavigationContainer>
             <Tab.Navigator
-                initialParams={{listOfGyms: gyms}}
+                initialRouteName='List'
                 screenOptions={{
-                    tabBarActiveTintColor: '#e91e63',
+                    tabBarActiveTintColor: '#DC143C',
                 }}
             >
                 <Tab.Screen 
                     name="Map" 
                     component={MapScreen}
-                    initialParams={{ listOfGyms: gyms }}
                     options={{
                         tabBarIcon: ({size, color}) => (
                             <Ionicons name="map-outline" size={size} color={color} />
@@ -43,7 +30,6 @@ export default function App() {
                 <Tab.Screen 
                     name="List" 
                     component={ListScreen} 
-                    initialParams={{ listOfGyms: gyms }}
                     options={{
                         tabBarIcon: ({size, color}) => (
                             <Ionicons name="list" size={size} color={color} />

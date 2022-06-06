@@ -15,7 +15,6 @@ export function MapScreen({ route }) {
         latitude: 37.78825,
         longitude: -122.4324,
     });
-    const { listOfGyms } = route.params;
 
     useEffect(() => {
         (async () => {
@@ -29,8 +28,6 @@ export function MapScreen({ route }) {
             setLocation(location.coords);
         })();
     }, []);
-
-    console.log(`List of EX RAID GYMS: \n ${listOfGyms}`)
 
     return (
         <View style={styles.container}>
