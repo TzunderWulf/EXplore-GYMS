@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import MapView, { Marker } from 'react-native-maps';
 import * as Location from 'expo-location';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { styles } from './Stylesheet';
 
-export function MapScreen() {
+export function MapScreen({ route }) {
     const [initialRegion, setInitialRegion] = useState({
         latitude: 37.78825,
         longitude: -122.4324,
@@ -15,6 +15,7 @@ export function MapScreen() {
         latitude: 37.78825,
         longitude: -122.4324,
     });
+    const { listOfGyms } = route.params;
 
     useEffect(() => {
         (async () => {
@@ -23,11 +24,13 @@ export function MapScreen() {
                 setErrorMsg('Permission to access location was denied');
                 return;
             }
-
+            
             let location = await Location.getCurrentPositionAsync({});
             setLocation(location.coords);
         })();
     }, []);
+
+    console.log(`List of EX RAID GYMS: \n ${listOfGyms}`)
 
     return (
         <View style={styles.container}>
@@ -40,7 +43,7 @@ export function MapScreen() {
                     longitudeDelta: 0.0421
                 }}
                 initialRegion={initialRegion}
-            >
+            >   
                 <Marker
                     key="End User Location"
                     coordinate={{ latitude: location.latitude, longitude: location.longitude }}

@@ -1,0 +1,22 @@
+{
+    "ex-raid-gyms": [
+        {
+            "id": 1,
+            "name": "Antwerpse Hoofd",
+            "lat": 51.916597,
+            "long": 4.502497
+        },
+        {
+            "id": 2,
+            "name": "Graffiti art",
+            "lat": 51.934119,
+            "long": 4.488619
+        },
+        {
+            "id": 3,
+            "name": "Lof Der Zotheid",
+            "lat": 51.921704,
+            "long": 4.493604
+        }
+    ]
+}
