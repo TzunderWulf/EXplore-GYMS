@@ -7,11 +7,11 @@ export const ListScreen = ({ navigation }) => {
     const [isLoading, setLoading] = useState(true);
     const [data, setData] = useState([]);
 
-    const getMovies = async () => {
+    const getGyms = async () => {
         try {
             fetch('https://stud.hosted.hr.nl/1006859/webservice/gymList.json')
                 .then((response) => response.json())
-                .then((data) => setData(data['ex-raid-gyms']))
+                .then((data) => setData(data.gyms))
         } catch (error) {
             console.log(error)
         } finally {
@@ -32,7 +32,7 @@ export const ListScreen = ({ navigation }) => {
                 <View style={styles.itemButtons}>
                     <TouchableOpacity 
                         style={styles.itemButton}
-                        onPress={() => navigation.navigate("Map", {id: item.id})}
+                        onPress={() => navigation.navigate("Map", {lat: item.lat, long: item.long})}
                     >
                         <Ionicons name="location" size={45} color="black" />
                     </TouchableOpacity>
@@ -45,8 +45,8 @@ export const ListScreen = ({ navigation }) => {
     }
 
     useEffect(() => {
-        getMovies();
-    }, [])
+        getGyms();
+    }, []);
 
     return(
         <View style={styles.container}>
