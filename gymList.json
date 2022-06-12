@@ -17,6 +17,48 @@
             "name": "Lof Der Zotheid",
             "lat": 51.921704,
             "long": 4.493604
+        },
+        {
+            "id": 4,
+            "name": "Art Antenna S",
+            "lat": 52.031526,
+            "long": 4.304726
+        },
+        {
+            "id": 5,
+            "name": "Arbeidsbelang",
+            "lat": 52.028896,
+            "long": 4.319096
+        },
+        {
+            "id": 6,
+            "name": "Chess Tables",
+            "lat": 52.029994,
+            "long": 4.324394
+        },
+        {
+            "id": 7,
+            "name": "Speeltuin Wilhelminapark",
+            "lat": 52.025507,
+            "long": 4.327707
+        },
+        {
+            "id": 8,
+            "name": "Zwarte els",
+            "lat": 52.021196,
+            "long": 4.291296
+        },
+        {
+            "id": 9,
+            "name": "Planetenpark - Saturnus",
+            "lat": 52.025119,
+            "long": 4.318619
+        },
+        {
+            "id": 10,
+            "name": "Rijswijk Pyramid Field",
+            "lat": 52.038758,
+            "long": 4.320458
         }
     ]
 }
